@@ -1,0 +1,17 @@
+name: Проверочка
+run-name: Проверочка
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git clone https://github.com/${{ github.repository }}.git .
+      - run: ls
+      - run: mkdir -p tests
+      - run: echo "Создание папки с копиями файлов"
+      - run: ls
+      - run: cp -r examples tests
+      - run: mkdir -p tests/cpp
+      - run: cp header/cpp/sort_static.cpp tests/cpp
+      - run: echo "создание ВХХ"
+      - run: cd tests && g++ -c * && echo "все файлы успешно откомпилированны" && cd .. && rm -r tests

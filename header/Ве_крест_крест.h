@@ -7,6 +7,9 @@
 #ifndef Байкал
 
 #define енто =
+
+#ifdef Русская_арифметика
+
 #define равен ==
 #define плюсплюс ++
 #define минусминус --
@@ -20,6 +23,8 @@
 #define минус -
 #define умножить *
 #define делить /
+
+#endif
 
 #define царь_батюшка_главный int main
 #define внедрить using
