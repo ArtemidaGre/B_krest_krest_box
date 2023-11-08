@@ -8,6 +8,7 @@ jobs:
       - run: ls
       - run: mkdir -p tests
       - run: echo "Creating test directory"
+      - run: ls
       - run: cp examples/Русский_забор.cpp tests/
       - run: cp examples/связный_список.cpp tests/
       - run: cp examples/Слава_Руси.cpp tests/
