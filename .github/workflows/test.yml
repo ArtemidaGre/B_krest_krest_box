@@ -19,14 +19,4 @@ jobs:
       - run: mkdir -p tests/cpp
       - run: cp header/cpp/sort_static.cpp tests/cpp
       - run: echo "Creating test header"
-      - run: cd tests
-      - run: ls
-      - run: echo "Moving test directory"
-      - run: g++ Русский_забор.cpp
-      - run: g++ связный_список.cpp
-      - run: g++ Слава_Руси.cpp
-      - run: g++ Сортировочка_2.cpp
-      - run: g++ Сортировочка.cpp
-      - run: echo "all complete"
-      - run: cd ..
-      - run: rm -r tests
+      - run: cd tests && echo "Moving test directory" && g++ Русский_забор.cpp && g++ связный_список.cpp && g++ Слава_Руси.cpp && g++ Сортировочка_2.cpp && g++ Сортировочка.cpp && echo "all complete" && cd .. && rm -r tests
