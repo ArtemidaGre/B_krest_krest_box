@@ -1,0 +1,29 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls
+      - run: mkdir -p tests
+      - run: echo "Creating test directory"
+      - run: cp examples/Русский_забор.cpp tests/
+      - run: cp examples/связный_список.cpp tests/
+      - run: cp examples/Слава_Руси.cpp tests/
+      - run: cp examples/Сортировочка_2.cpp tests/
+      - run: cp examples/Сортировочка.cpp tests/
+      - run: cp header/Ве_крест_крест.h tests/
+      - run: mkdir -p tests/cpp
+      - run: cp header/cpp/sort_static.cpp tests/cpp
+      - run: echo "Creating test header"
+      - run: cd tests
+      - run: echo "Moving test directory"
+      - run: g++ Русский_забор.cpp
+      - run: g++ связный_список.cpp
+      - run: g++ Слава_Руси.cpp
+      - run: g++ Сортировочка_2.cpp
+      - run: g++ Сортировочка.cpp
+      - run: echo "all complete"
+      - run: cd ..
+      - run: rm -r tests
