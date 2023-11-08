@@ -6,25 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls
-      - run: |
-          mkdir -p tests
-          echo "Creating test directory"
-          cp examples/Русский_забор.cpp tests/
-          cp examples/связный_список.cpp tests/
-          cp examples/Слава_Руси.cpp tests/
-          cp examples/Сортировочка_2.cpp tests/
-          cp examples/Сортировочка.cpp tests/
-          cp header/Ве_крест_крест.h tests/
-          mkdir -p tests/cpp
-          cp header/cpp/sort_static.cpp tests/cpp
-          echo "Creating test header"
-          cd tests
-          echo "Moving test directory"
-          g++ Русский_забор.cpp
-          g++ связный_список.cpp
-          g++ Слава_Руси.cpp
-          g++ Сортировочка_2.cpp
-          g++ Сортировочка.cpp
-          echo "all complete"
-          cd ..
-          rm -r tests
+      - run: mkdir -p ${{ github.workspace }}/tests && echo "Creating test directory" && cp ${{ github.workspace }}/examples/Русский_забор.cpp ${{ github.workspace }}/tests/ && cp ${{ github.workspace }}/examples/связный_список.cpp ${{ github.workspace }}/tests/ && cp ${{ github.workspace }}/examples/Слава_Руси.cpp ${{ github.workspace }}/tests/ && cp ${{ github.workspace }}/examples/Сортировочка_2.cpp ${{ github.workspace }}/tests/ && cp ${{ github.workspace }}/examples/Сортировочка.cpp ${{ github.workspace }}/tests/ && cp ${{ github.workspace }}/header/Ве_крест_крест.h ${{ github.workspace }}/tests/ && mkdir -p ${{ github.workspace }}/tests/cpp && cp ${{ github.workspace }}/header/cpp/sort_static.cpp ${{ github.workspace }}/tests/cpp && echo "Creating test header" && cd ${{ github.workspace }}/tests && echo "Moving test directory" && g++ Русский_забор.cpp && g++ связный_список.cpp && g++ Слава_Руси.cpp && g++ Сортировочка_2.cpp && g++ Сортировочка.cpp && echo "all complete" && cd ${{ github.workspace }} && rm -r ${{ github.workspace }}/tests
