@@ -1,11 +1,11 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: test
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone https://github.com/ArtemidaGre/B_krest_krest_box.git .
+      - run: git clone https://github.com/${{ github.repository }}.git .
       - run: ls
       - run: mkdir -p tests
       - run: echo "Creating test directory"
