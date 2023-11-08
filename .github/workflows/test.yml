@@ -20,6 +20,7 @@ jobs:
       - run: cp header/cpp/sort_static.cpp tests/cpp
       - run: echo "Creating test header"
       - run: cd tests
+      - run: ls
       - run: echo "Moving test directory"
       - run: g++ Русский_забор.cpp
       - run: g++ связный_список.cpp
